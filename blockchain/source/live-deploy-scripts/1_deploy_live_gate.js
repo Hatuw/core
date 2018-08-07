@@ -1,5 +1,6 @@
 let GateMultisig = artifacts.require('./MultiSigWallet.sol');
 let GateKeeperLive = artifacts.require('./SimpleGatekeeperWithLimitLive.sol');
+let SNMMaster = artifacts.require('./SNM.sol')
 
 let MSOwners = [
     '0xdaec8F2cDf27aD3DF5438E5244aE206c5FcF7fCd',
@@ -14,19 +15,25 @@ let MSOwners = [
 ];
 
 let MSRequired = 5;
-let freezingTime = 60 * 15;
+// let freezingTime = 60 * 15;
+let freezingTime = 0;
 let SNMMasterchainAddress = '0x983f6d60db79ea8ca4eb9968c6aff8cfa04b3c63';
-let actualGasPrice = 3000000000;
+// let actualGasPrice = 3000000000;
+let actualGasPrice = 0;
 
 module.exports = function (deployer, network) {
     deployer.then(async () => { // eslint-disable-line promise/catch-or-return
         if (network === 'master') {
+            // 0) deploy `SNM Master`
+            await deployer.deploy(SNMMaster, { gasPrice: actualGasPrice });
+            let token = await SNMMaster.deployed();
+
             // 1) deploy `GatekeeperLive` multisig
             await deployer.deploy(GateMultisig, MSOwners, MSRequired, { gasPrice: actualGasPrice });
             let multisig = await GateMultisig.deployed();
 
             // 2) deploy Live Gatekeeper
-            await deployer.deploy(GateKeeperLive, SNMMasterchainAddress, freezingTime, { gasPrice: actualGasPrice });
+            await deployer.deploy(GateKeeperLive, token.address, freezingTime, { gasPrice: actualGasPrice });
             let gk = await GateKeeperLive.deployed();
 
             // 2.1) add keeper with 100k limit for testing

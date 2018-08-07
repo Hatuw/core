@@ -10,8 +10,10 @@ let DeployList = artifacts.require('./DeployList.sol');
 let AddressHashMap = artifacts.require('./AddressHashMap.sol');
 
 // filled before deploy
-let SNMMasterchainAddress = '0x983f6d60db79ea8ca4eb9968c6aff8cfa04b3c63';
-let GatekeeperMasterchainAddress = '0x125f1e37a45abf9b9894aefcb03d14d170d1489b';
+// let SNMMasterchainAddress = '0x983f6d60db79ea8ca4eb9968c6aff8cfa04b3c63';
+// let GatekeeperMasterchainAddress = '0x125f1e37a45abf9b9894aefcb03d14d170d1489b';
+let SNMMasterchainAddress = '0x4225ddc38c57b0ef2debcdac8e87af05d9859940';
+let GatekeeperMasterchainAddress = '0x5ae73123990580bbb0830de67d8f47210ede7dca';
 
 let MSOwners = [
     '0xdaec8F2cDf27aD3DF5438E5244aE206c5FcF7fCd',
@@ -29,7 +31,8 @@ let MSRequired = 5;
 let benchmarksQuantity = 12;
 let netflagsQuantity = 3;
 
-let Deployers = ['0x7aa5237e0f999a9853a9cc8c56093220142ce48e', '0xd9a43e16e78c86cf7b525c305f8e72723e0fab5e'];
+// let Deployers = ['0x7aa5237e0f999a9853a9cc8c56093220142ce48e', '0xd9a43e16e78c86cf7b525c305f8e72723e0fab5e'];
+let Deployers = ['0xfa578b05fbd9e1e7c1e69d5add1113240d641bc2', '0x56c8b9ab7a9594f2d60427fcedbff6ab63c43281']
 
 // main part
 

@@ -76,7 +76,6 @@ type CustomClient struct {
 func NewClient(endpoint string) (CustomEthereumClient, error) {
 	tmp := &CustomClient{}
 	var err error
-
 	tmp.c, err = rpc.Dial(endpoint)
 	if err != nil {
 		return nil, err

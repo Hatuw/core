@@ -722,12 +722,10 @@ func (api *BasicMarketAPI) PlaceOrder(ctx context.Context, key *ecdsa.PrivateKey
 	if err != nil {
 		return nil, err
 	}
-
 	logs, err := WaitTxAndExtractLog(ctx, api.client, api.opts.blockConfirmations, api.opts.logParsePeriod, tx, OrderPlacedTopic)
 	if err != nil {
 		return nil, err
 	}
-
 	id, err := extractBig(logs.Topics, 1)
 	if err != nil {
 		return nil, err

@@ -326,7 +326,7 @@ type ERC20BasicTransfer struct {
 
 // FilterTransfer is a free log retrieval operation binding the contract event 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef.
 //
-// Solidity: event Transfer(from indexed address, to indexed address, value uint256)
+// Solidity: e Transfer(from indexed address, to indexed address, value uint256)
 func (_ERC20Basic *ERC20BasicFilterer) FilterTransfer(opts *bind.FilterOpts, from []common.Address, to []common.Address) (*ERC20BasicTransferIterator, error) {
 
 	var fromRule []interface{}
@@ -347,7 +347,7 @@ func (_ERC20Basic *ERC20BasicFilterer) FilterTransfer(opts *bind.FilterOpts, fro
 
 // WatchTransfer is a free log subscription operation binding the contract event 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef.
 //
-// Solidity: event Transfer(from indexed address, to indexed address, value uint256)
+// Solidity: e Transfer(from indexed address, to indexed address, value uint256)
 func (_ERC20Basic *ERC20BasicFilterer) WatchTransfer(opts *bind.WatchOpts, sink chan<- *ERC20BasicTransfer, from []common.Address, to []common.Address) (event.Subscription, error) {
 
 	var fromRule []interface{}

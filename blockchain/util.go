@@ -46,7 +46,6 @@ func WaitTxAndExtractLog(ctx context.Context, client CustomEthereumClient, confi
 	if err != nil {
 		return nil, err
 	}
-
 	txLog, err := FindLogByTopic(receipt, topic)
 	if err != nil {
 		return nil, err

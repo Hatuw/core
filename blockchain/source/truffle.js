@@ -39,7 +39,9 @@ module.exports = {
         },
 
         master: {
-            provider: () => new PrivateKeyProvider(privateKey, masterchainEndpoint),
+            // provider: () => new PrivateKeyProvider(privateKey, masterchainEndpoint),
+            host: 'localhost',
+            port: 8545,
             network_id: '1', // eslint-disable-line camelcase
         },
         rinkeby: {
@@ -48,12 +50,16 @@ module.exports = {
         },
 
         privateLive: {
-            provider: () => new PrivateKeyProvider(privateKey, sidechainEndpoint),
-            network_id: '444', // eslint-disable-line camelcase
+            // provider: () => new PrivateKeyProvider(privateKey, sidechainEndpoint),
+            host: 'localhost',
+            port: 8545,
+            network_id: '*', // eslint-disable-line camelcase
         },
         private: {
-            provider: () => new PrivateKeyProvider(privateKey, sidechainDevEndpoint),
-            network_id: '444', // eslint-disable-line camelcase
+            // provider: () => new PrivateKeyProvider(privateKey, sidechainDevEndpoint),
+            host: 'localhost',
+            port: 8545,
+            network_id: '*', // eslint-disable-line camelcase
         },
     },
     solc: {

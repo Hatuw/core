@@ -15,7 +15,8 @@ let MSOwners = [
 ];
 
 let MSRequired = 5;
-let freezingTime = 60 * 15;
+// let freezingTime = 60 * 15;
+let freezingTime = 0;
 
 module.exports = function (deployer, network) {
     deployer.then(async () => { // eslint-disable-line promise/catch-or-return
