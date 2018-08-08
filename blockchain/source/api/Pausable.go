@@ -386,7 +386,7 @@ type PausableOwnershipRenounced struct {
 
 // FilterOwnershipRenounced is a free log retrieval operation binding the contract event 0xf8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c64820.
 //
-// Solidity: e OwnershipRenounced(previousOwner indexed address)
+// Solidity: event OwnershipRenounced(previousOwner indexed address)
 func (_Pausable *PausableFilterer) FilterOwnershipRenounced(opts *bind.FilterOpts, previousOwner []common.Address) (*PausableOwnershipRenouncedIterator, error) {
 
 	var previousOwnerRule []interface{}
@@ -403,7 +403,7 @@ func (_Pausable *PausableFilterer) FilterOwnershipRenounced(opts *bind.FilterOpt
 
 // WatchOwnershipRenounced is a free log subscription operation binding the contract event 0xf8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c64820.
 //
-// Solidity: e OwnershipRenounced(previousOwner indexed address)
+// Solidity: event OwnershipRenounced(previousOwner indexed address)
 func (_Pausable *PausableFilterer) WatchOwnershipRenounced(opts *bind.WatchOpts, sink chan<- *PausableOwnershipRenounced, previousOwner []common.Address) (event.Subscription, error) {
 
 	var previousOwnerRule []interface{}
@@ -519,7 +519,7 @@ type PausableOwnershipTransferred struct {
 
 // FilterOwnershipTransferred is a free log retrieval operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
 //
-// Solidity: e OwnershipTransferred(previousOwner indexed address, newOwner indexed address)
+// Solidity: event OwnershipTransferred(previousOwner indexed address, newOwner indexed address)
 func (_Pausable *PausableFilterer) FilterOwnershipTransferred(opts *bind.FilterOpts, previousOwner []common.Address, newOwner []common.Address) (*PausableOwnershipTransferredIterator, error) {
 
 	var previousOwnerRule []interface{}
@@ -540,7 +540,7 @@ func (_Pausable *PausableFilterer) FilterOwnershipTransferred(opts *bind.FilterO
 
 // WatchOwnershipTransferred is a free log subscription operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
 //
-// Solidity: e OwnershipTransferred(previousOwner indexed address, newOwner indexed address)
+// Solidity: event OwnershipTransferred(previousOwner indexed address, newOwner indexed address)
 func (_Pausable *PausableFilterer) WatchOwnershipTransferred(opts *bind.WatchOpts, sink chan<- *PausableOwnershipTransferred, previousOwner []common.Address, newOwner []common.Address) (event.Subscription, error) {
 
 	var previousOwnerRule []interface{}
@@ -658,7 +658,7 @@ type PausablePause struct {
 
 // FilterPause is a free log retrieval operation binding the contract event 0x6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff625.
 //
-// Solidity: e Pause()
+// Solidity: event Pause()
 func (_Pausable *PausableFilterer) FilterPause(opts *bind.FilterOpts) (*PausablePauseIterator, error) {
 
 	logs, sub, err := _Pausable.contract.FilterLogs(opts, "Pause")
@@ -670,7 +670,7 @@ func (_Pausable *PausableFilterer) FilterPause(opts *bind.FilterOpts) (*Pausable
 
 // WatchPause is a free log subscription operation binding the contract event 0x6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff625.
 //
-// Solidity: e Pause()
+// Solidity: event Pause()
 func (_Pausable *PausableFilterer) WatchPause(opts *bind.WatchOpts, sink chan<- *PausablePause) (event.Subscription, error) {
 
 	logs, sub, err := _Pausable.contract.WatchLogs(opts, "Pause")
@@ -779,7 +779,7 @@ type PausableUnpause struct {
 
 // FilterUnpause is a free log retrieval operation binding the contract event 0x7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b33.
 //
-// Solidity: e Unpause()
+// Solidity: event Unpause()
 func (_Pausable *PausableFilterer) FilterUnpause(opts *bind.FilterOpts) (*PausableUnpauseIterator, error) {
 
 	logs, sub, err := _Pausable.contract.FilterLogs(opts, "Unpause")
@@ -791,7 +791,7 @@ func (_Pausable *PausableFilterer) FilterUnpause(opts *bind.FilterOpts) (*Pausab
 
 // WatchUnpause is a free log subscription operation binding the contract event 0x7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b33.
 //
-// Solidity: e Unpause()
+// Solidity: event Unpause()
 func (_Pausable *PausableFilterer) WatchUnpause(opts *bind.WatchOpts, sink chan<- *PausableUnpause) (event.Subscription, error) {
 
 	logs, sub, err := _Pausable.contract.WatchLogs(opts, "Unpause")

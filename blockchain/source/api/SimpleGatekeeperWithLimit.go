@@ -19,7 +19,7 @@ import (
 const SimpleGatekeeperWithLimitABI = "[{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"keepers\",\"outputs\":[{\"name\":\"dayLimit\",\"type\":\"uint256\"},{\"name\":\"lastDay\",\"type\":\"uint256\"},{\"name\":\"spentToday\",\"type\":\"uint256\"},{\"name\":\"frozen\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"paid\",\"outputs\":[{\"name\":\"commitTS\",\"type\":\"uint256\"},{\"name\":\"paid\",\"type\":\"bool\"},{\"name\":\"keeper\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"transactionAmount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"commissionBalance\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"commission\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_token\",\"type\":\"address\"},{\"name\":\"_freezingTime\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"txNumber\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"PayinTx\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"txNumber\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"value\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"commitTimestamp\",\"type\":\"uint256\"}],\"name\":\"CommitTx\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"txNumber\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"PayoutTx\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"block\",\"type\":\"uint256\"}],\"name\":\"Suicide\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"keeper\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"dayLimit\",\"type\":\"uint256\"}],\"name\":\"LimitChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"keeper\",\"type\":\"address\"}],\"name\":\"KeeperFreezed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"keeper\",\"type\":\"address\"}],\"name\":\"KeeperUnfreezed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"commission\",\"type\":\"uint256\"}],\"name\":\"CommissionChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"previousOwner\",\"type\":\"address\"}],\"name\":\"OwnershipRenounced\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"name\":\"_keeper\",\"type\":\"address\"},{\"name\":\"_limit\",\"type\":\"uint256\"}],\"name\":\"ChangeKeeperLimit\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_keeper\",\"type\":\"address\"}],\"name\":\"FreezeKeeper\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_keeper\",\"type\":\"address\"}],\"name\":\"UnfreezeKeeper\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"Payin\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"},{\"name\":\"_txNumber\",\"type\":\"uint256\"}],\"name\":\"Payout\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_freezingTime\",\"type\":\"uint256\"}],\"name\":\"SetFreezingTime\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"GetFreezingTime\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_commission\",\"type\":\"uint256\"}],\"name\":\"SetCommission\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"GetCommission\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"TransferCommission\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"kill\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]"
 
 // SimpleGatekeeperWithLimitBin is the compiled bytecode used for deploying new contracts.
-const SimpleGatekeeperWithLimitBin = `0x608060405260006003556000600455600060055534801561001f57600080fd5b50604051604080610eac8339810160405280516020909101516000805460018054600160a060020a03909516600160a060020a0319958616179055831633908117909316909217909155600755610e318061007b6000396000f3006080604052600436106101065763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166306d8e8b1811461010b57806328f727f01461012257806336ab802e1461013a5780633bbd64bc1461016157806341c0e1b5146101aa57806358712633146101bf578063634235fc146101d45780636ea58031146101fb578063715018a6146102135780638da5cb5b14610228578063ad835c0b14610259578063add89bb21461027d578063b38ad8e7146102bc578063cc38d7ca146102dd578063d942bffa146102f5578063dcf1a9ef1461030a578063e14891911461031f578063e5837a7b14610334578063f2fde38b14610355575b600080fd5b34801561011757600080fd5b50610120610376565b005b34801561012e57600080fd5b50610120600435610444565b34801561014657600080fd5b5061014f610562565b60408051918252519081900360200190f35b34801561016d57600080fd5b50610182600160a060020a0360043516610568565b6040805194855260208501939093528383019190915215156060830152519081900360800190f35b3480156101b657600080fd5b50610120610594565b3480156101cb57600080fd5b5061014f610729565b3480156101e057600080fd5b50610120600160a060020a036004351660243560443561072f565b34801561020757600080fd5b506101206004356109b7565b34801561021f57600080fd5b50610120610a01565b34801561023457600080fd5b5061023d610a6d565b60408051600160a060020a039092168252519081900360200190f35b34801561026557600080fd5b50610120600160a060020a0360043516602435610a7c565b34801561028957600080fd5b50610295600435610ada565b604080519384529115156020840152600160a060020a031682820152519081900360600190f35b3480156102c857600080fd5b50610120600160a060020a0360043516610b06565b3480156102e957600080fd5b50610120600435610b92565b34801561030157600080fd5b5061014f610bae565b34801561031657600080fd5b5061014f610bb4565b34801561032b57600080fd5b5061014f610bba565b34801561034057600080fd5b50610120600160a060020a0360043516610bc0565b34801561036157600080fd5b50610120600160a060020a0360043516610c46565b600054600160a060020a0316331461038d57600080fd5b60015460008054600554604080517fa9059cbb000000000000000000000000000000000000000000000000000000008152600160a060020a039384166004820152602481019290925251919093169263a9059cbb9260448083019360209390929083900390910190829087803b15801561040657600080fd5b505af115801561041a573d6000803e3d6000fd5b505050506040513d602081101561043057600080fd5b5051151561043d57600080fd5b6000600555565b600454811161045257600080fd5b600154604080517f23b872dd000000000000000000000000000000000000000000000000000000008152336004820152306024820152604481018490529051600160a060020a03909216916323b872dd916064808201926020929091908290030181600087803b1580156104c557600080fd5b505af11580156104d9573d6000803e3d6000fd5b505050506040513d60208110156104ef57600080fd5b505115156104fc57600080fd5b60038054600101905560045460055461051a9163ffffffff610c6916565b60055560045461053190829063ffffffff610c7c16565b60035460405133907f14312725abbc46ad798bc078b2663e1fcbace97be0247cd177176f3b4df2538e90600090a450565b60075490565b600260208190526000918252604090912080546001820154928201546003909201549092919060ff1684565b600054600160a060020a031633146105ab57600080fd5b60015460008054604080517f70a082310000000000000000000000000000000000000000000000000000000081523060048201529051600160a060020a039485169463a9059cbb9493169285926370a082319260248083019360209383900390910190829087803b15801561061f57600080fd5b505af1158015610633573d6000803e3d6000fd5b505050506040513d602081101561064957600080fd5b5051604080517c010000000000000000000000000000000000000000000000000000000063ffffffff8616028152600160a060020a03909316600484015260248301919091525160448083019260209291908290030181600087803b1580156106b157600080fd5b505af11580156106c5573d6000803e3d6000fd5b505050506040513d60208110156106db57600080fd5b505115156106e857600080fd5b6040805142815290517fa1ea9b09ea114021983e9ecf71cf2ffddfd80f5cb4f925e5bf24f9bdb5e55fde9181900360200190a1600054600160a060020a0316ff5b60045490565b3360009081526002602052604081206003015460ff161561074f57600080fd5b336000908152600260205260408120541161076957600080fd5b50604080516c01000000000000000000000000600160a060020a0386160281526014810183905260348101849052815190819003605401902060008181526006602052919091206001015460ff16156107c157600080fd5b600081815260066020526040902054151561086d576107e03384610c8e565b15156107eb57600080fd5b600081815260066020908152604091829020428082556001909101805474ffffffffffffffffffffffffffffffffffffffff00191633610100021790558251908152915185928592600160a060020a038916927f65546c3bc3a77ffc91667da85018004299542e28a511328cfb4b3f86974902ee9281900390910190a46109b1565b6000818152600660205260409020600101546101009004600160a060020a0316331461089857600080fd5b60075460008281526006602052604090205442910111156108b857600080fd5b600154604080517fa9059cbb000000000000000000000000000000000000000000000000000000008152600160a060020a038781166004830152602482018790529151919092169163a9059cbb9160448083019260209291908290030181600087803b15801561092757600080fd5b505af115801561093b573d6000803e3d6000fd5b505050506040513d602081101561095157600080fd5b5051151561095e57600080fd5b6000818152600660205260408082206001908101805460ff191690911790555184918491600160a060020a038816917f731af16374848c2c73a6154fd410cb421138e7db45c5a904e5a475c756faa8d991a45b50505050565b600054600160a060020a031633146109ce57600080fd5b600481905560405181907f839e4456845dbc05c7d8638cf0b0976161331b5f9163980d71d9a6444a326c6190600090a250565b600054600160a060020a03163314610a1857600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600054600160a060020a031681565b600054600160a060020a03163314610a9357600080fd5b600160a060020a038216600081815260026020526040808220849055518392917fef9c668177207fb68ca5e3894a1efacebb659762b27a737fde58ceebc4f30ad391a35050565b6006602052600090815260409020805460019091015460ff8116906101009004600160a060020a031683565b3360009081526002602052604081205411610b2057600080fd5b600160a060020a03811660009081526002602052604081205411610b4357600080fd5b600160a060020a038116600081815260026020526040808220600301805460ff19166001179055517fdf4868d2f39f6ab9f41b92c6917da5aec882c461ce7316bb62076865108502bd9190a250565b600054600160a060020a03163314610ba957600080fd5b600755565b60035481565b60055481565b60045481565b600054600160a060020a03163314610bd757600080fd5b600160a060020a03811660009081526002602052604081205411610bfa57600080fd5b600160a060020a038116600081815260026020526040808220600301805460ff19169055517fbbe17a7427b5192903e1b3f0f2b6ef8b2a1af9b33e1079faf8f8383f2fb63b539190a250565b600054600160a060020a03163314610c5d57600080fd5b610c6681610d7f565b50565b81810182811015610c7657fe5b92915050565b600082821115610c8857fe5b50900390565b600160a060020a038216600090815260026020526040812060010154610cb2610dfc565b1115610cf957600160a060020a038316600090815260026020819052604082200155610cdc610dfc565b600160a060020a0384166000908152600260205260409020600101555b600160a060020a0383166000908152600260208190526040909120015482810110801590610d475750600160a060020a03831660009081526002602081905260409091208054910154830111155b15610d765750600160a060020a0382166000908152600260208190526040909120018054820190556001610c76565b50600092915050565b600160a060020a0381161515610d9457600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b620151804204905600a165627a7a7230582033fe69394e48593d4149492300aafae839aca93454224e618b64eed86595a85e0029`
+const SimpleGatekeeperWithLimitBin = `0x608060405260006003556000600455600060055534801561001f57600080fd5b50604051604080610eac8339810160405280516020909101516000805460018054600160a060020a03909516600160a060020a0319958616179055831633908117909316909217909155600755610e318061007b6000396000f3006080604052600436106101065763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166306d8e8b1811461010b57806328f727f01461012257806336ab802e1461013a5780633bbd64bc1461016157806341c0e1b5146101aa57806358712633146101bf578063634235fc146101d45780636ea58031146101fb578063715018a6146102135780638da5cb5b14610228578063ad835c0b14610259578063add89bb21461027d578063b38ad8e7146102bc578063cc38d7ca146102dd578063d942bffa146102f5578063dcf1a9ef1461030a578063e14891911461031f578063e5837a7b14610334578063f2fde38b14610355575b600080fd5b34801561011757600080fd5b50610120610376565b005b34801561012e57600080fd5b50610120600435610444565b34801561014657600080fd5b5061014f610562565b60408051918252519081900360200190f35b34801561016d57600080fd5b50610182600160a060020a0360043516610568565b6040805194855260208501939093528383019190915215156060830152519081900360800190f35b3480156101b657600080fd5b50610120610594565b3480156101cb57600080fd5b5061014f610729565b3480156101e057600080fd5b50610120600160a060020a036004351660243560443561072f565b34801561020757600080fd5b506101206004356109b7565b34801561021f57600080fd5b50610120610a01565b34801561023457600080fd5b5061023d610a6d565b60408051600160a060020a039092168252519081900360200190f35b34801561026557600080fd5b50610120600160a060020a0360043516602435610a7c565b34801561028957600080fd5b50610295600435610ada565b604080519384529115156020840152600160a060020a031682820152519081900360600190f35b3480156102c857600080fd5b50610120600160a060020a0360043516610b06565b3480156102e957600080fd5b50610120600435610b92565b34801561030157600080fd5b5061014f610bae565b34801561031657600080fd5b5061014f610bb4565b34801561032b57600080fd5b5061014f610bba565b34801561034057600080fd5b50610120600160a060020a0360043516610bc0565b34801561036157600080fd5b50610120600160a060020a0360043516610c46565b600054600160a060020a0316331461038d57600080fd5b60015460008054600554604080517fa9059cbb000000000000000000000000000000000000000000000000000000008152600160a060020a039384166004820152602481019290925251919093169263a9059cbb9260448083019360209390929083900390910190829087803b15801561040657600080fd5b505af115801561041a573d6000803e3d6000fd5b505050506040513d602081101561043057600080fd5b5051151561043d57600080fd5b6000600555565b600454811161045257600080fd5b600154604080517f23b872dd000000000000000000000000000000000000000000000000000000008152336004820152306024820152604481018490529051600160a060020a03909216916323b872dd916064808201926020929091908290030181600087803b1580156104c557600080fd5b505af11580156104d9573d6000803e3d6000fd5b505050506040513d60208110156104ef57600080fd5b505115156104fc57600080fd5b60038054600101905560045460055461051a9163ffffffff610c6916565b60055560045461053190829063ffffffff610c7c16565b60035460405133907f14312725abbc46ad798bc078b2663e1fcbace97be0247cd177176f3b4df2538e90600090a450565b60075490565b600260208190526000918252604090912080546001820154928201546003909201549092919060ff1684565b600054600160a060020a031633146105ab57600080fd5b60015460008054604080517f70a082310000000000000000000000000000000000000000000000000000000081523060048201529051600160a060020a039485169463a9059cbb9493169285926370a082319260248083019360209383900390910190829087803b15801561061f57600080fd5b505af1158015610633573d6000803e3d6000fd5b505050506040513d602081101561064957600080fd5b5051604080517c010000000000000000000000000000000000000000000000000000000063ffffffff8616028152600160a060020a03909316600484015260248301919091525160448083019260209291908290030181600087803b1580156106b157600080fd5b505af11580156106c5573d6000803e3d6000fd5b505050506040513d60208110156106db57600080fd5b505115156106e857600080fd5b6040805142815290517fa1ea9b09ea114021983e9ecf71cf2ffddfd80f5cb4f925e5bf24f9bdb5e55fde9181900360200190a1600054600160a060020a0316ff5b60045490565b3360009081526002602052604081206003015460ff161561074f57600080fd5b336000908152600260205260408120541161076957600080fd5b50604080516c01000000000000000000000000600160a060020a0386160281526014810183905260348101849052815190819003605401902060008181526006602052919091206001015460ff16156107c157600080fd5b600081815260066020526040902054151561086d576107e03384610c8e565b15156107eb57600080fd5b600081815260066020908152604091829020428082556001909101805474ffffffffffffffffffffffffffffffffffffffff00191633610100021790558251908152915185928592600160a060020a038916927f65546c3bc3a77ffc91667da85018004299542e28a511328cfb4b3f86974902ee9281900390910190a46109b1565b6000818152600660205260409020600101546101009004600160a060020a0316331461089857600080fd5b60075460008281526006602052604090205442910111156108b857600080fd5b600154604080517fa9059cbb000000000000000000000000000000000000000000000000000000008152600160a060020a038781166004830152602482018790529151919092169163a9059cbb9160448083019260209291908290030181600087803b15801561092757600080fd5b505af115801561093b573d6000803e3d6000fd5b505050506040513d602081101561095157600080fd5b5051151561095e57600080fd5b6000818152600660205260408082206001908101805460ff191690911790555184918491600160a060020a038816917f731af16374848c2c73a6154fd410cb421138e7db45c5a904e5a475c756faa8d991a45b50505050565b600054600160a060020a031633146109ce57600080fd5b600481905560405181907f839e4456845dbc05c7d8638cf0b0976161331b5f9163980d71d9a6444a326c6190600090a250565b600054600160a060020a03163314610a1857600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600054600160a060020a031681565b600054600160a060020a03163314610a9357600080fd5b600160a060020a038216600081815260026020526040808220849055518392917fef9c668177207fb68ca5e3894a1efacebb659762b27a737fde58ceebc4f30ad391a35050565b6006602052600090815260409020805460019091015460ff8116906101009004600160a060020a031683565b3360009081526002602052604081205411610b2057600080fd5b600160a060020a03811660009081526002602052604081205411610b4357600080fd5b600160a060020a038116600081815260026020526040808220600301805460ff19166001179055517fdf4868d2f39f6ab9f41b92c6917da5aec882c461ce7316bb62076865108502bd9190a250565b600054600160a060020a03163314610ba957600080fd5b600755565b60035481565b60055481565b60045481565b600054600160a060020a03163314610bd757600080fd5b600160a060020a03811660009081526002602052604081205411610bfa57600080fd5b600160a060020a038116600081815260026020526040808220600301805460ff19169055517fbbe17a7427b5192903e1b3f0f2b6ef8b2a1af9b33e1079faf8f8383f2fb63b539190a250565b600054600160a060020a03163314610c5d57600080fd5b610c6681610d7f565b50565b81810182811015610c7657fe5b92915050565b600082821115610c8857fe5b50900390565b600160a060020a038216600090815260026020526040812060010154610cb2610dfc565b1115610cf957600160a060020a038316600090815260026020819052604082200155610cdc610dfc565b600160a060020a0384166000908152600260205260409020600101555b600160a060020a0383166000908152600260208190526040909120015482810110801590610d475750600160a060020a03831660009081526002602081905260409091208054910154830111155b15610d765750600160a060020a0382166000908152600260208190526040909120018054820190556001610c76565b50600092915050565b600160a060020a0381161515610d9457600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b620151804204905600a165627a7a72305820e782347acd2e5934be33a0f2c59f43edc86f2ba843394880726e4b6054893d480029`
 
 // DeploySimpleGatekeeperWithLimit deploys a new Ethereum contract, binding an instance of SimpleGatekeeperWithLimit to it.
 func DeploySimpleGatekeeperWithLimit(auth *bind.TransactOpts, backend bind.ContractBackend, _token common.Address, _freezingTime *big.Int) (common.Address, *types.Transaction, *SimpleGatekeeperWithLimit, error) {
@@ -722,7 +722,7 @@ type SimpleGatekeeperWithLimitCommissionChanged struct {
 
 // FilterCommissionChanged is a free log retrieval operation binding the contract event 0x839e4456845dbc05c7d8638cf0b0976161331b5f9163980d71d9a6444a326c61.
 //
-// Solidity: e CommissionChanged(commission indexed uint256)
+// Solidity: event CommissionChanged(commission indexed uint256)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterCommissionChanged(opts *bind.FilterOpts, commission []*big.Int) (*SimpleGatekeeperWithLimitCommissionChangedIterator, error) {
 
 	var commissionRule []interface{}
@@ -739,7 +739,7 @@ func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterCommi
 
 // WatchCommissionChanged is a free log subscription operation binding the contract event 0x839e4456845dbc05c7d8638cf0b0976161331b5f9163980d71d9a6444a326c61.
 //
-// Solidity: e CommissionChanged(commission indexed uint256)
+// Solidity: event CommissionChanged(commission indexed uint256)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) WatchCommissionChanged(opts *bind.WatchOpts, sink chan<- *SimpleGatekeeperWithLimitCommissionChanged, commission []*big.Int) (event.Subscription, error) {
 
 	var commissionRule []interface{}
@@ -857,7 +857,7 @@ type SimpleGatekeeperWithLimitCommitTx struct {
 
 // FilterCommitTx is a free log retrieval operation binding the contract event 0x65546c3bc3a77ffc91667da85018004299542e28a511328cfb4b3f86974902ee.
 //
-// Solidity: e CommitTx(from indexed address, txNumber indexed uint256, value indexed uint256, commitTimestamp uint256)
+// Solidity: event CommitTx(from indexed address, txNumber indexed uint256, value indexed uint256, commitTimestamp uint256)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterCommitTx(opts *bind.FilterOpts, from []common.Address, txNumber []*big.Int, value []*big.Int) (*SimpleGatekeeperWithLimitCommitTxIterator, error) {
 
 	var fromRule []interface{}
@@ -882,7 +882,7 @@ func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterCommi
 
 // WatchCommitTx is a free log subscription operation binding the contract event 0x65546c3bc3a77ffc91667da85018004299542e28a511328cfb4b3f86974902ee.
 //
-// Solidity: e CommitTx(from indexed address, txNumber indexed uint256, value indexed uint256, commitTimestamp uint256)
+// Solidity: event CommitTx(from indexed address, txNumber indexed uint256, value indexed uint256, commitTimestamp uint256)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) WatchCommitTx(opts *bind.WatchOpts, sink chan<- *SimpleGatekeeperWithLimitCommitTx, from []common.Address, txNumber []*big.Int, value []*big.Int) (event.Subscription, error) {
 
 	var fromRule []interface{}
@@ -1005,7 +1005,7 @@ type SimpleGatekeeperWithLimitKeeperFreezed struct {
 
 // FilterKeeperFreezed is a free log retrieval operation binding the contract event 0xdf4868d2f39f6ab9f41b92c6917da5aec882c461ce7316bb62076865108502bd.
 //
-// Solidity: e KeeperFreezed(keeper indexed address)
+// Solidity: event KeeperFreezed(keeper indexed address)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterKeeperFreezed(opts *bind.FilterOpts, keeper []common.Address) (*SimpleGatekeeperWithLimitKeeperFreezedIterator, error) {
 
 	var keeperRule []interface{}
@@ -1022,7 +1022,7 @@ func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterKeepe
 
 // WatchKeeperFreezed is a free log subscription operation binding the contract event 0xdf4868d2f39f6ab9f41b92c6917da5aec882c461ce7316bb62076865108502bd.
 //
-// Solidity: e KeeperFreezed(keeper indexed address)
+// Solidity: event KeeperFreezed(keeper indexed address)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) WatchKeeperFreezed(opts *bind.WatchOpts, sink chan<- *SimpleGatekeeperWithLimitKeeperFreezed, keeper []common.Address) (event.Subscription, error) {
 
 	var keeperRule []interface{}
@@ -1137,7 +1137,7 @@ type SimpleGatekeeperWithLimitKeeperUnfreezed struct {
 
 // FilterKeeperUnfreezed is a free log retrieval operation binding the contract event 0xbbe17a7427b5192903e1b3f0f2b6ef8b2a1af9b33e1079faf8f8383f2fb63b53.
 //
-// Solidity: e KeeperUnfreezed(keeper indexed address)
+// Solidity: event KeeperUnfreezed(keeper indexed address)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterKeeperUnfreezed(opts *bind.FilterOpts, keeper []common.Address) (*SimpleGatekeeperWithLimitKeeperUnfreezedIterator, error) {
 
 	var keeperRule []interface{}
@@ -1154,7 +1154,7 @@ func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterKeepe
 
 // WatchKeeperUnfreezed is a free log subscription operation binding the contract event 0xbbe17a7427b5192903e1b3f0f2b6ef8b2a1af9b33e1079faf8f8383f2fb63b53.
 //
-// Solidity: e KeeperUnfreezed(keeper indexed address)
+// Solidity: event KeeperUnfreezed(keeper indexed address)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) WatchKeeperUnfreezed(opts *bind.WatchOpts, sink chan<- *SimpleGatekeeperWithLimitKeeperUnfreezed, keeper []common.Address) (event.Subscription, error) {
 
 	var keeperRule []interface{}
@@ -1270,7 +1270,7 @@ type SimpleGatekeeperWithLimitLimitChanged struct {
 
 // FilterLimitChanged is a free log retrieval operation binding the contract event 0xef9c668177207fb68ca5e3894a1efacebb659762b27a737fde58ceebc4f30ad3.
 //
-// Solidity: e LimitChanged(keeper indexed address, dayLimit indexed uint256)
+// Solidity: event LimitChanged(keeper indexed address, dayLimit indexed uint256)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterLimitChanged(opts *bind.FilterOpts, keeper []common.Address, dayLimit []*big.Int) (*SimpleGatekeeperWithLimitLimitChangedIterator, error) {
 
 	var keeperRule []interface{}
@@ -1291,7 +1291,7 @@ func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterLimit
 
 // WatchLimitChanged is a free log subscription operation binding the contract event 0xef9c668177207fb68ca5e3894a1efacebb659762b27a737fde58ceebc4f30ad3.
 //
-// Solidity: e LimitChanged(keeper indexed address, dayLimit indexed uint256)
+// Solidity: event LimitChanged(keeper indexed address, dayLimit indexed uint256)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) WatchLimitChanged(opts *bind.WatchOpts, sink chan<- *SimpleGatekeeperWithLimitLimitChanged, keeper []common.Address, dayLimit []*big.Int) (event.Subscription, error) {
 
 	var keeperRule []interface{}
@@ -1410,7 +1410,7 @@ type SimpleGatekeeperWithLimitOwnershipRenounced struct {
 
 // FilterOwnershipRenounced is a free log retrieval operation binding the contract event 0xf8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c64820.
 //
-// Solidity: e OwnershipRenounced(previousOwner indexed address)
+// Solidity: event OwnershipRenounced(previousOwner indexed address)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterOwnershipRenounced(opts *bind.FilterOpts, previousOwner []common.Address) (*SimpleGatekeeperWithLimitOwnershipRenouncedIterator, error) {
 
 	var previousOwnerRule []interface{}
@@ -1427,7 +1427,7 @@ func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterOwner
 
 // WatchOwnershipRenounced is a free log subscription operation binding the contract event 0xf8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c64820.
 //
-// Solidity: e OwnershipRenounced(previousOwner indexed address)
+// Solidity: event OwnershipRenounced(previousOwner indexed address)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) WatchOwnershipRenounced(opts *bind.WatchOpts, sink chan<- *SimpleGatekeeperWithLimitOwnershipRenounced, previousOwner []common.Address) (event.Subscription, error) {
 
 	var previousOwnerRule []interface{}
@@ -1543,7 +1543,7 @@ type SimpleGatekeeperWithLimitOwnershipTransferred struct {
 
 // FilterOwnershipTransferred is a free log retrieval operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
 //
-// Solidity: e OwnershipTransferred(previousOwner indexed address, newOwner indexed address)
+// Solidity: event OwnershipTransferred(previousOwner indexed address, newOwner indexed address)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterOwnershipTransferred(opts *bind.FilterOpts, previousOwner []common.Address, newOwner []common.Address) (*SimpleGatekeeperWithLimitOwnershipTransferredIterator, error) {
 
 	var previousOwnerRule []interface{}
@@ -1564,7 +1564,7 @@ func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterOwner
 
 // WatchOwnershipTransferred is a free log subscription operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
 //
-// Solidity: e OwnershipTransferred(previousOwner indexed address, newOwner indexed address)
+// Solidity: event OwnershipTransferred(previousOwner indexed address, newOwner indexed address)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) WatchOwnershipTransferred(opts *bind.WatchOpts, sink chan<- *SimpleGatekeeperWithLimitOwnershipTransferred, previousOwner []common.Address, newOwner []common.Address) (event.Subscription, error) {
 
 	var previousOwnerRule []interface{}
@@ -1685,7 +1685,7 @@ type SimpleGatekeeperWithLimitPayinTx struct {
 
 // FilterPayinTx is a free log retrieval operation binding the contract event 0x14312725abbc46ad798bc078b2663e1fcbace97be0247cd177176f3b4df2538e.
 //
-// Solidity: e PayinTx(from indexed address, txNumber indexed uint256, value indexed uint256)
+// Solidity: event PayinTx(from indexed address, txNumber indexed uint256, value indexed uint256)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterPayinTx(opts *bind.FilterOpts, from []common.Address, txNumber []*big.Int, value []*big.Int) (*SimpleGatekeeperWithLimitPayinTxIterator, error) {
 
 	var fromRule []interface{}
@@ -1710,7 +1710,7 @@ func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterPayin
 
 // WatchPayinTx is a free log subscription operation binding the contract event 0x14312725abbc46ad798bc078b2663e1fcbace97be0247cd177176f3b4df2538e.
 //
-// Solidity: e PayinTx(from indexed address, txNumber indexed uint256, value indexed uint256)
+// Solidity: event PayinTx(from indexed address, txNumber indexed uint256, value indexed uint256)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) WatchPayinTx(opts *bind.WatchOpts, sink chan<- *SimpleGatekeeperWithLimitPayinTx, from []common.Address, txNumber []*big.Int, value []*big.Int) (event.Subscription, error) {
 
 	var fromRule []interface{}
@@ -1835,7 +1835,7 @@ type SimpleGatekeeperWithLimitPayoutTx struct {
 
 // FilterPayoutTx is a free log retrieval operation binding the contract event 0x731af16374848c2c73a6154fd410cb421138e7db45c5a904e5a475c756faa8d9.
 //
-// Solidity: e PayoutTx(from indexed address, txNumber indexed uint256, value indexed uint256)
+// Solidity: event PayoutTx(from indexed address, txNumber indexed uint256, value indexed uint256)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterPayoutTx(opts *bind.FilterOpts, from []common.Address, txNumber []*big.Int, value []*big.Int) (*SimpleGatekeeperWithLimitPayoutTxIterator, error) {
 
 	var fromRule []interface{}
@@ -1860,7 +1860,7 @@ func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterPayou
 
 // WatchPayoutTx is a free log subscription operation binding the contract event 0x731af16374848c2c73a6154fd410cb421138e7db45c5a904e5a475c756faa8d9.
 //
-// Solidity: e PayoutTx(from indexed address, txNumber indexed uint256, value indexed uint256)
+// Solidity: event PayoutTx(from indexed address, txNumber indexed uint256, value indexed uint256)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) WatchPayoutTx(opts *bind.WatchOpts, sink chan<- *SimpleGatekeeperWithLimitPayoutTx, from []common.Address, txNumber []*big.Int, value []*big.Int) (event.Subscription, error) {
 
 	var fromRule []interface{}
@@ -1983,7 +1983,7 @@ type SimpleGatekeeperWithLimitSuicide struct {
 
 // FilterSuicide is a free log retrieval operation binding the contract event 0xa1ea9b09ea114021983e9ecf71cf2ffddfd80f5cb4f925e5bf24f9bdb5e55fde.
 //
-// Solidity: e Suicide(block uint256)
+// Solidity: event Suicide(block uint256)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterSuicide(opts *bind.FilterOpts) (*SimpleGatekeeperWithLimitSuicideIterator, error) {
 
 	logs, sub, err := _SimpleGatekeeperWithLimit.contract.FilterLogs(opts, "Suicide")
@@ -1995,7 +1995,7 @@ func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) FilterSuici
 
 // WatchSuicide is a free log subscription operation binding the contract event 0xa1ea9b09ea114021983e9ecf71cf2ffddfd80f5cb4f925e5bf24f9bdb5e55fde.
 //
-// Solidity: e Suicide(block uint256)
+// Solidity: event Suicide(block uint256)
 func (_SimpleGatekeeperWithLimit *SimpleGatekeeperWithLimitFilterer) WatchSuicide(opts *bind.WatchOpts, sink chan<- *SimpleGatekeeperWithLimitSuicide) (event.Subscription, error) {
 
 	logs, sub, err := _SimpleGatekeeperWithLimit.contract.WatchLogs(opts, "Suicide")

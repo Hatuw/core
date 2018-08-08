@@ -58,9 +58,9 @@ func WaitTxAndExtractLog(ctx context.Context, client CustomEthereumClient, confi
 // return error if transaction failed
 // return error if topic doesn't contain in receipt
 func FindLogByTopic(txReceipt *Receipt, topic common.Hash) (*types.Log, error) {
-	if txReceipt.Status != types.ReceiptStatusSuccessful {
-		return nil, errors.New("transaction failed")
-	}
+	// if txReceipt.Status != types.ReceiptStatusSuccessful {
+	// 	return nil, errors.New("transaction failed")
+	// }
 
 	for _, l := range txReceipt.Logs {
 		if len(l.Topics) < 1 {

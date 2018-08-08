@@ -556,7 +556,6 @@ func NewBasicMarket(address common.Address, token TokenAPI, opts *chainOpts) (Ma
 func txRetryWrapper(fn func() (*types.Transaction, error)) (*types.Transaction, error) {
 	var err error
 	var tx *types.Transaction
-
 	for i := 0; i < txRetryTimes; i++ {
 		tx, err = fn()
 

@@ -18,7 +18,7 @@ import (
 const AddressHashMapABI = "[{\"constant\":false,\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"previousOwner\",\"type\":\"address\"}],\"name\":\"OwnershipRenounced\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"name\":\"_key\",\"type\":\"bytes32\"},{\"name\":\"_value\",\"type\":\"address\"}],\"name\":\"write\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_key\",\"type\":\"bytes32\"}],\"name\":\"read\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}]"
 
 // AddressHashMapBin is the compiled bytecode used for deploying new contracts.
-const AddressHashMapBin = `0x608060405234801561001057600080fd5b5060008054600160a060020a0319908116339081179091161790556102ca8061003a6000396000f30060806040526004361061006c5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166361da14398114610071578063715018a6146100a5578063853eadce146100bc5780638da5cb5b146100e0578063f2fde38b146100f5575b600080fd5b34801561007d57600080fd5b50610089600435610116565b60408051600160a060020a039092168252519081900360200190f35b3480156100b157600080fd5b506100ba610131565b005b3480156100c857600080fd5b506100ba600435600160a060020a036024351661019d565b3480156100ec57600080fd5b506100896101ef565b34801561010157600080fd5b506100ba600160a060020a03600435166101fe565b600090815260016020526040902054600160a060020a031690565b600054600160a060020a0316331461014857600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600054600160a060020a031633146101b457600080fd5b600091825260016020526040909120805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03909216919091179055565b600054600160a060020a031681565b600054600160a060020a0316331461021557600080fd5b61021e81610221565b50565b600160a060020a038116151561023657600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a7230582076d5fd3fb327ad3a401ed7ab60924a804cab83b677fe69f4d8eccd0db07de6320029`
+const AddressHashMapBin = `0x608060405234801561001057600080fd5b5060008054600160a060020a0319908116339081179091161790556102ca8061003a6000396000f30060806040526004361061006c5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166361da14398114610071578063715018a6146100a5578063853eadce146100bc5780638da5cb5b146100e0578063f2fde38b146100f5575b600080fd5b34801561007d57600080fd5b50610089600435610116565b60408051600160a060020a039092168252519081900360200190f35b3480156100b157600080fd5b506100ba610131565b005b3480156100c857600080fd5b506100ba600435600160a060020a036024351661019d565b3480156100ec57600080fd5b506100896101ef565b34801561010157600080fd5b506100ba600160a060020a03600435166101fe565b600090815260016020526040902054600160a060020a031690565b600054600160a060020a0316331461014857600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600054600160a060020a031633146101b457600080fd5b600091825260016020526040909120805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03909216919091179055565b600054600160a060020a031681565b600054600160a060020a0316331461021557600080fd5b61021e81610221565b50565b600160a060020a038116151561023657600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a7230582086324aa22f8e5c4888681c0f78dd8cbe8c0779be544ab36f06368ab71cc531340029`
 
 // DeployAddressHashMap deploys a new Ethereum contract, binding an instance of AddressHashMap to it.
 func DeployAddressHashMap(auth *bind.TransactOpts, backend bind.ContractBackend) (common.Address, *types.Transaction, *AddressHashMap, error) {
@@ -365,7 +365,7 @@ type AddressHashMapOwnershipRenounced struct {
 
 // FilterOwnershipRenounced is a free log retrieval operation binding the contract event 0xf8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c64820.
 //
-// Solidity: e OwnershipRenounced(previousOwner indexed address)
+// Solidity: event OwnershipRenounced(previousOwner indexed address)
 func (_AddressHashMap *AddressHashMapFilterer) FilterOwnershipRenounced(opts *bind.FilterOpts, previousOwner []common.Address) (*AddressHashMapOwnershipRenouncedIterator, error) {
 
 	var previousOwnerRule []interface{}
@@ -382,7 +382,7 @@ func (_AddressHashMap *AddressHashMapFilterer) FilterOwnershipRenounced(opts *bi
 
 // WatchOwnershipRenounced is a free log subscription operation binding the contract event 0xf8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c64820.
 //
-// Solidity: e OwnershipRenounced(previousOwner indexed address)
+// Solidity: event OwnershipRenounced(previousOwner indexed address)
 func (_AddressHashMap *AddressHashMapFilterer) WatchOwnershipRenounced(opts *bind.WatchOpts, sink chan<- *AddressHashMapOwnershipRenounced, previousOwner []common.Address) (event.Subscription, error) {
 
 	var previousOwnerRule []interface{}
@@ -498,7 +498,7 @@ type AddressHashMapOwnershipTransferred struct {
 
 // FilterOwnershipTransferred is a free log retrieval operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
 //
-// Solidity: e OwnershipTransferred(previousOwner indexed address, newOwner indexed address)
+// Solidity: event OwnershipTransferred(previousOwner indexed address, newOwner indexed address)
 func (_AddressHashMap *AddressHashMapFilterer) FilterOwnershipTransferred(opts *bind.FilterOpts, previousOwner []common.Address, newOwner []common.Address) (*AddressHashMapOwnershipTransferredIterator, error) {
 
 	var previousOwnerRule []interface{}
@@ -519,7 +519,7 @@ func (_AddressHashMap *AddressHashMapFilterer) FilterOwnershipTransferred(opts *
 
 // WatchOwnershipTransferred is a free log subscription operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
 //
-// Solidity: e OwnershipTransferred(previousOwner indexed address, newOwner indexed address)
+// Solidity: event OwnershipTransferred(previousOwner indexed address, newOwner indexed address)
 func (_AddressHashMap *AddressHashMapFilterer) WatchOwnershipTransferred(opts *bind.WatchOpts, sink chan<- *AddressHashMapOwnershipTransferred, previousOwner []common.Address, newOwner []common.Address) (event.Subscription, error) {
 
 	var previousOwnerRule []interface{}

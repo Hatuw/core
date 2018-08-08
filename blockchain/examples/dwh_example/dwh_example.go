@@ -27,7 +27,8 @@ func getBlockNumber() {
 }
 
 func placeOrder() {
-	hexKey := "a5dd45e0810ca83e21f1063e6bf055bd13544398f280701cbfda1346bcf3ae64"
+	// hexKey := "a5dd45e0810ca83e21f1063e6bf055bd13544398f280701cbfda1346bcf3ae64"
+    hexKey := "f72394ce4e4869821edb545c44a0d407267fbff890aa7368d53c7ff3ec309e6c"
 	prv, err := crypto.HexToECDSA(hexKey)
 	if err != nil {
 		log.Fatalln(err)
@@ -74,8 +75,11 @@ func placeOrder() {
 	// 	return
 	// }
 
+    // OrderType_ANY OrderType = 0
+    // OrderType_BID OrderType = 1
+    // OrderType_ASK OrderType = 2
 	order := &sonm.Order{
-		OrderType:      sonm.OrderType_BID,
+		OrderType:      2, //sonm.OrderType_ASK,
 		CounterpartyID: sonm.NewEthAddress(common.HexToAddress("0x0")),
 		Duration:       3600 - 50 + (rand.Uint64() % 100),
 		Price:          price,
@@ -105,14 +109,14 @@ func placeOrder() {
 		return
 	}
     log.Println("OrderId: ", ordId)
-    log.Println("Canceling")
-	err = api.Market().CancelOrder(context.Background(), prv, ordId)
+    // log.Println("Canceling")
+	// err = api.Market().CancelOrder(context.Background(), prv, ordId)
 
-	if err != nil {
-		log.Fatalln(err)
-		return
-	}
-	log.Println("canceled")
+	// if err != nil {
+	// 	log.Fatalln(err)
+	// 	return
+	// }
+	// log.Println("canceled")
 }
 
 func main() {

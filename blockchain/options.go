@@ -5,15 +5,21 @@ import (
 	"crypto/ecdsa"
 	"math/big"
 	"time"
+	// "fmt"
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 )
 
 const (
+	// master net
 	// defaultMasterchainEndpoint        = "https://mainnet.infura.io/00iTrs5PIy0uGODwcsrb"
-	defaultMasterchainEndpoint        = "http://172.18.196.1:8545"
 	// defaultSidechainEndpoint          = "https://sidechain.livenet.sonm.com/"
+
+	// dev net
+	// defaultSidechainEndpoint          = "https://sidechain-dev.sonm.com"
+
+	defaultMasterchainEndpoint        = "http://172.18.196.1:8545"
 	defaultSidechainEndpoint          = "http://172.18.196.12:8545"
 
 	defaultMasterchainGasPrice uint64 = 20000000000 // 20 Gwei

@@ -25,9 +25,12 @@ let MSOwners = [
     '0x7aa5237e0f999a9853a9cc8c56093220142ce48e',
     '0xd43f262536e916a4a807d27080092f190e25d774',
     '0xdd8422eed7fe5f85ea8058d273d3f5c17ef41d1c',
+
+    '0xfa578b05fbd9e1e7c1e69d5add1113240d641bc2',
+    '0x56c8b9ab7a9594f2d60427fcedbff6ab63c43281',
 ];
 
-let MSRequired = 5;
+let MSRequired = 1;
 let benchmarksQuantity = 12;
 let netflagsQuantity = 3;
 

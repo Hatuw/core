@@ -42,7 +42,7 @@ module.exports = {
             // provider: () => new PrivateKeyProvider(privateKey, masterchainEndpoint),
             host: 'localhost',
             port: 8545,
-            network_id: '1', // eslint-disable-line camelcase
+            network_id: '*', // eslint-disable-line camelcase
         },
         rinkeby: {
             provider: () => new PrivateKeyProvider(privateKey, rinkebyEndpoint),
