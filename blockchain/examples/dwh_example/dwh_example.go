@@ -12,11 +12,13 @@ import (
 	"github.com/sonm-io/core/blockchain"
     "github.com/sonm-io/core/proto"
     "github.com/sonm-io/core/util"
+
 )
 
 func getBlockNumber() {
 	// client, err := blockchain.NewClient("https://sidechain-dev.sonm.com")
-	client, err := blockchain.NewClient("http://172.18.196.12:8545")
+	// client, err := blockchain.NewClient("http://222.200.180.185:8545")
+    client, err := blockchain.NewClient("http://localhost:8545")
 	if err != nil {
 		log.Fatalln(err)
 		os.Exit(1)
@@ -61,7 +63,7 @@ func placeOrder() {
     log.Println("Allowance: ", allowance)
 
 	// price := sonm.NewBigIntFromInt(1)
-    price := sonm.NewBigIntFromInt(0)
+    price := sonm.NewBigIntFromInt(1e15)
 
     log.Println("Price: ", price.Unwrap())
 
@@ -92,6 +94,8 @@ func placeOrder() {
 		},
 	}
 
+    log.Println("Placing Order")
+
 	res, err := api.Market().PlaceOrder(
 		context.Background(),
 		prv,
@@ -109,7 +113,8 @@ func placeOrder() {
 		return
 	}
     log.Println("OrderId: ", ordId)
-    // log.Println("Canceling")
+
+ //    log.Println("Canceling")
 	// err = api.Market().CancelOrder(context.Background(), prv, ordId)
 
 	// if err != nil {

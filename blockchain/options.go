@@ -19,10 +19,11 @@ const (
 	// dev net
 	// defaultSidechainEndpoint          = "https://sidechain-dev.sonm.com"
 
-	defaultMasterchainEndpoint        = "http://172.18.196.1:8545"
-	defaultSidechainEndpoint          = "http://172.18.196.12:8545"
+	defaultMasterchainEndpoint        = "http://222.200.180.184:8545"
+	// defaultSidechainEndpoint          = "http://222.200.180.185:8545"
+	defaultSidechainEndpoint          = "http://222.200.180.185:8545"
 
-	defaultMasterchainGasPrice uint64 = 20000000000 // 20 Gwei
+	defaultMasterchainGasPrice uint64 = 0 // 20000000000 // 20 Gwei
 	defaultSidechainGasPrice   uint64 = 0
 	// defaultBlockConfirmations         = 5
 	defaultBlockConfirmations         = 0

@@ -38,10 +38,8 @@ module.exports = function (deployer, network) {
 
             // 3) transfer all tokens to Gatekeeper
             // await token.transfer(gk.address, 444 * 1e6 * 1e18, { gasPrice: 0 });
-
-            // await token.transfer(gk.address, 440 * 1e6 * 1e18, { gasPrice: 0 });
+            await token.transfer(gk.address, 440 * 1e6 * 1e18, { gasPrice: 0 });
             await token.transfer('0xfa578b05fbd9e1e7c1e69d5add1113240d641bc2', 4 * 1e6 * 1e18, { gasPrice: 0 });
-            // await token.mint('0xfa578b05fbd9e1e7c1e69d5add1113240d641bc2', 4 * 1e6 * 1e18, { gasPrice: 0 });
 
             // 3.1): add keeper with 100k limit for testing
             await gk.ChangeKeeperLimit('0x1f0dc2f125a2df9e37f32242cc3e34328f096b3c', 100000 * 1e18, { gasPrice: 0 });

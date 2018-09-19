@@ -16,10 +16,10 @@ import (
 )
 
 // SNMABI is the input ABI used to generate the binding from.
-const SNMABI = "[{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_spender\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_from\",\"type\":\"address\"},{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_spender\",\"type\":\"address\"},{\"name\":\"_subtractedValue\",\"type\":\"uint256\"}],\"name\":\"decreaseApproval\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_spender\",\"type\":\"address\"},{\"name\":\"_addedValue\",\"type\":\"uint256\"}],\"name\":\"increaseApproval\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_owner\",\"type\":\"address\"},{\"name\":\"_spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"previousOwner\",\"type\":\"address\"}],\"name\":\"OwnershipRenounced\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"}]"
+const SNMABI = "[{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"ico\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"name\":\"balance\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"tokensAreFrozen\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_owner\",\"type\":\"address\"},{\"name\":\"_spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"name\":\"remaining\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"name\":\"_holder\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_from\",\"type\":\"address\"},{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_spender\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]"
 
 // SNMBin is the compiled bytecode used for deploying new contracts.
-const SNMBin = `0x60c0604052600a60808190527f534f4e4d20746f6b656e0000000000000000000000000000000000000000000060a090815261003e91600491906100d8565b506040805180820190915260038082527f534e4d00000000000000000000000000000000000000000000000000000000006020909201918252610083916005916100d8565b50601260065534801561009557600080fd5b506003805433600160a060020a0319918216811790911681179091556b016f44a83aab6c233c000000600181905560009182526020829052604090912055610173565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061011957805160ff1916838001178555610146565b82800160010185558215610146579182015b8281111561014657825182559160200191906001019061012b565b50610152929150610156565b5090565b61017091905b80821115610152576000815560010161015c565b90565b610a1f806101826000396000f3006080604052600436106100cf5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166306fdde0381146100d4578063095ea7b31461015e57806318160ddd1461019657806323b872dd146101bd578063313ce567146101e757806366188463146101fc57806370a0823114610220578063715018a6146102415780638da5cb5b1461025857806395d89b4114610289578063a9059cbb1461029e578063d73dd623146102c2578063dd62ed3e146102e6578063f2fde38b1461030d575b600080fd5b3480156100e057600080fd5b506100e961032e565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561012357818101518382015260200161010b565b50505050905090810190601f1680156101505780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561016a57600080fd5b50610182600160a060020a03600435166024356103bc565b604080519115158252519081900360200190f35b3480156101a257600080fd5b506101ab610422565b60408051918252519081900360200190f35b3480156101c957600080fd5b50610182600160a060020a0360043581169060243516604435610428565b3480156101f357600080fd5b506101ab61059f565b34801561020857600080fd5b50610182600160a060020a03600435166024356105a5565b34801561022c57600080fd5b506101ab600160a060020a0360043516610695565b34801561024d57600080fd5b506102566106b0565b005b34801561026457600080fd5b5061026d61071e565b60408051600160a060020a039092168252519081900360200190f35b34801561029557600080fd5b506100e961072d565b3480156102aa57600080fd5b50610182600160a060020a0360043516602435610788565b3480156102ce57600080fd5b50610182600160a060020a0360043516602435610869565b3480156102f257600080fd5b506101ab600160a060020a0360043581169060243516610902565b34801561031957600080fd5b50610256600160a060020a036004351661092d565b6004805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156103b45780601f10610389576101008083540402835291602001916103b4565b820191906000526020600020905b81548152906001019060200180831161039757829003601f168201915b505050505081565b336000818152600260209081526040808320600160a060020a038716808552908352818420869055815186815291519394909390927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925928290030190a350600192915050565b60015490565b6000600160a060020a038316151561043f57600080fd5b600160a060020a03841660009081526020819052604090205482111561046457600080fd5b600160a060020a038416600090815260026020908152604080832033845290915290205482111561049457600080fd5b600160a060020a0384166000908152602081905260409020546104bd908363ffffffff61095016565b600160a060020a0380861660009081526020819052604080822093909355908516815220546104f2908363ffffffff61096216565b600160a060020a03808516600090815260208181526040808320949094559187168152600282528281203382529091522054610534908363ffffffff61095016565b600160a060020a03808616600081815260026020908152604080832033845282529182902094909455805186815290519287169391927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef929181900390910190a35060019392505050565b60065481565b336000908152600260209081526040808320600160a060020a0386168452909152812054808311156105fa57336000908152600260209081526040808320600160a060020a038816845290915281205561062f565b61060a818463ffffffff61095016565b336000908152600260209081526040808320600160a060020a03891684529091529020555b336000818152600260209081526040808320600160a060020a0389168085529083529281902054815190815290519293927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925929181900390910190a35060019392505050565b600160a060020a031660009081526020819052604090205490565b600354600160a060020a031633146106c757600080fd5b600354604051600160a060020a03909116907ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482090600090a26003805473ffffffffffffffffffffffffffffffffffffffff19169055565b600354600160a060020a031681565b6005805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156103b45780601f10610389576101008083540402835291602001916103b4565b6000600160a060020a038316151561079f57600080fd5b336000908152602081905260409020548211156107bb57600080fd5b336000908152602081905260409020546107db908363ffffffff61095016565b3360009081526020819052604080822092909255600160a060020a0385168152205461080d908363ffffffff61096216565b600160a060020a038416600081815260208181526040918290209390935580518581529051919233927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9281900390910190a350600192915050565b336000908152600260209081526040808320600160a060020a038616845290915281205461089d908363ffffffff61096216565b336000818152600260209081526040808320600160a060020a0389168085529083529281902085905580519485525191937f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925929081900390910190a350600192915050565b600160a060020a03918216600090815260026020908152604080832093909416825291909152205490565b600354600160a060020a0316331461094457600080fd5b61094d81610975565b50565b60008282111561095c57fe5b50900390565b8181018281101561096f57fe5b92915050565b600160a060020a038116151561098a57600080fd5b600354604051600160a060020a038084169216907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e090600090a36003805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a72305820cc581aa0c6300cca9b52e9dd019190f18303ab18ebd276a6303fce9db43feecd0029`
+const SNMBin = `0x60c0604052600960808190527f4e414320546f6b656e000000000000000000000000000000000000000000000060a090815261003e91600391906100c8565b506040805180820190915260038082527f4e414300000000000000000000000000000000000000000000000000000000006020909201918252610083916004916100c8565b5060126005556006805460a060020a60ff02191690553480156100a557600080fd5b503360009081526001602052604090206a21165458500521280000009055610163565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061010957805160ff1916838001178555610136565b82800160010185558215610136579182015b8281111561013657825182559160200191906001019061011b565b50610142929150610146565b5090565b61016091905b80821115610142576000815560010161014c565b90565b61079c806101726000396000f3006080604052600436106100b95763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166306fdde0381146100be578063095ea7b31461014857806318160ddd1461016e57806323b872dd14610195578063313ce567146101d357806340c10f19146101e85780635d4522011461020c57806370a082311461023d57806395d89b411461025e578063a9059cbb14610273578063ca67065f14610297578063dd62ed3e146102ac575b600080fd5b3480156100ca57600080fd5b506100d36102d3565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561010d5781810151838201526020016100f5565b50505050905090810190601f16801561013a5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561015457600080fd5b5061016c600160a060020a0360043516602435610361565b005b34801561017a57600080fd5b5061018361036f565b60408051918252519081900360200190f35b3480156101a157600080fd5b506101bf600160a060020a0360043581169060243516604435610375565b604080519115158252519081900360200190f35b3480156101df57600080fd5b5061018361038d565b3480156101f457600080fd5b5061016c600160a060020a0360043516602435610393565b34801561021857600080fd5b5061022161041a565b60408051600160a060020a039092168252519081900360200190f35b34801561024957600080fd5b50610183600160a060020a0360043516610429565b34801561026a57600080fd5b506100d3610444565b34801561027f57600080fd5b506101bf600160a060020a036004351660243561049f565b3480156102a357600080fd5b506101bf6104b5565b3480156102b857600080fd5b50610183600160a060020a03600435811690602435166104d6565b6003805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156103595780601f1061032e57610100808354040283529160200191610359565b820191906000526020600020905b81548152906001019060200180831161033c57829003601f168201915b505050505081565b61036b8282610501565b5050565b60005481565b6000610382848484610563565b506001949350505050565b60055481565b80151561039f57600080fd5b6000546b016f44a83aab6c233c00000090820111156103bd57600080fd5b600160a060020a0382166000818152600160209081526040808320805486019055825485018355805185815290517fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef929181900390910190a35050565b600654600160a060020a031681565b600160a060020a031660009081526001602052604090205490565b6004805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156103595780601f1061032e57610100808354040283529160200191610359565b60006104ab8383610672565b5060019392505050565b60065474010000000000000000000000000000000000000000900460ff1681565b600160a060020a03918216600090815260026020908152604080832093909416825291909152205490565b336000818152600260209081526040808320600160a060020a03871680855290835292819020859055805185815290519293927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925929181900390910190a35050565b600160a060020a038084166000908152600260209081526040808320338452825280832054938616835260019091528120549091906105a8908463ffffffff61073516565b600160a060020a0380861660009081526001602052604080822093909355908716815220546105dd908463ffffffff61074d16565b600160a060020a038616600090815260016020526040902055610606818463ffffffff61074d16565b600160a060020a03808716600081815260026020908152604080832033845282529182902094909455805187815290519288169391927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef929181900390910190a3506001949350505050565b60006040604436101561068457600080fd5b336000908152600160205260409020546106a4908463ffffffff61074d16565b3360009081526001602052604080822092909255600160a060020a038616815220546106d6908463ffffffff61073516565b600160a060020a0385166000818152600160209081526040918290209390935580518681529051919233927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9281900390910190a35060019392505050565b600082820161074684821015610761565b9392505050565b600061075b83831115610761565b50900390565b80151561076d57600080fd5b505600a165627a7a7230582059d6ad639aacca4eefe6418af1baf721f6d655829ecaf51a652bc720f8bd7b030029`
 
 // DeploySNM deploys a new Ethereum contract, binding an instance of SNM to it.
 func DeploySNM(auth *bind.TransactOpts, backend bind.ContractBackend) (common.Address, *types.Transaction, *SNM, error) {
@@ -178,7 +178,7 @@ func (_SNM *SNMTransactorRaw) Transact(opts *bind.TransactOpts, method string, p
 
 // Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
 //
-// Solidity: function allowance(_owner address, _spender address) constant returns(uint256)
+// Solidity: function allowance(_owner address, _spender address) constant returns(remaining uint256)
 func (_SNM *SNMCaller) Allowance(opts *bind.CallOpts, _owner common.Address, _spender common.Address) (*big.Int, error) {
 	var (
 		ret0 = new(*big.Int)
@@ -190,21 +190,21 @@ func (_SNM *SNMCaller) Allowance(opts *bind.CallOpts, _owner common.Address, _sp
 
 // Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
 //
-// Solidity: function allowance(_owner address, _spender address) constant returns(uint256)
+// Solidity: function allowance(_owner address, _spender address) constant returns(remaining uint256)
 func (_SNM *SNMSession) Allowance(_owner common.Address, _spender common.Address) (*big.Int, error) {
 	return _SNM.Contract.Allowance(&_SNM.CallOpts, _owner, _spender)
 }
 
 // Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
 //
-// Solidity: function allowance(_owner address, _spender address) constant returns(uint256)
+// Solidity: function allowance(_owner address, _spender address) constant returns(remaining uint256)
 func (_SNM *SNMCallerSession) Allowance(_owner common.Address, _spender common.Address) (*big.Int, error) {
 	return _SNM.Contract.Allowance(&_SNM.CallOpts, _owner, _spender)
 }
 
 // BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
 //
-// Solidity: function balanceOf(_owner address) constant returns(uint256)
+// Solidity: function balanceOf(_owner address) constant returns(balance uint256)
 func (_SNM *SNMCaller) BalanceOf(opts *bind.CallOpts, _owner common.Address) (*big.Int, error) {
 	var (
 		ret0 = new(*big.Int)
@@ -216,14 +216,14 @@ func (_SNM *SNMCaller) BalanceOf(opts *bind.CallOpts, _owner common.Address) (*b
 
 // BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
 //
-// Solidity: function balanceOf(_owner address) constant returns(uint256)
+// Solidity: function balanceOf(_owner address) constant returns(balance uint256)
 func (_SNM *SNMSession) BalanceOf(_owner common.Address) (*big.Int, error) {
 	return _SNM.Contract.BalanceOf(&_SNM.CallOpts, _owner)
 }
 
 // BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
 //
-// Solidity: function balanceOf(_owner address) constant returns(uint256)
+// Solidity: function balanceOf(_owner address) constant returns(balance uint256)
 func (_SNM *SNMCallerSession) BalanceOf(_owner common.Address) (*big.Int, error) {
 	return _SNM.Contract.BalanceOf(&_SNM.CallOpts, _owner)
 }
@@ -254,6 +254,32 @@ func (_SNM *SNMCallerSession) Decimals() (*big.Int, error) {
 	return _SNM.Contract.Decimals(&_SNM.CallOpts)
 }
 
+// Ico is a free data retrieval call binding the contract method 0x5d452201.
+//
+// Solidity: function ico() constant returns(address)
+func (_SNM *SNMCaller) Ico(opts *bind.CallOpts) (common.Address, error) {
+	var (
+		ret0 = new(common.Address)
+	)
+	out := ret0
+	err := _SNM.contract.Call(opts, out, "ico")
+	return *ret0, err
+}
+
+// Ico is a free data retrieval call binding the contract method 0x5d452201.
+//
+// Solidity: function ico() constant returns(address)
+func (_SNM *SNMSession) Ico() (common.Address, error) {
+	return _SNM.Contract.Ico(&_SNM.CallOpts)
+}
+
+// Ico is a free data retrieval call binding the contract method 0x5d452201.
+//
+// Solidity: function ico() constant returns(address)
+func (_SNM *SNMCallerSession) Ico() (common.Address, error) {
+	return _SNM.Contract.Ico(&_SNM.CallOpts)
+}
+
 // Name is a free data retrieval call binding the contract method 0x06fdde03.
 //
 // Solidity: function name() constant returns(string)
@@ -280,32 +306,6 @@ func (_SNM *SNMCallerSession) Name() (string, error) {
 	return _SNM.Contract.Name(&_SNM.CallOpts)
 }
 
-// Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
-//
-// Solidity: function owner() constant returns(address)
-func (_SNM *SNMCaller) Owner(opts *bind.CallOpts) (common.Address, error) {
-	var (
-		ret0 = new(common.Address)
-	)
-	out := ret0
-	err := _SNM.contract.Call(opts, out, "owner")
-	return *ret0, err
-}
-
-// Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
-//
-// Solidity: function owner() constant returns(address)
-func (_SNM *SNMSession) Owner() (common.Address, error) {
-	return _SNM.Contract.Owner(&_SNM.CallOpts)
-}
-
-// Owner is a free data retrieval call binding the contract method 0x8da5cb5b.
-//
-// Solidity: function owner() constant returns(address)
-func (_SNM *SNMCallerSession) Owner() (common.Address, error) {
-	return _SNM.Contract.Owner(&_SNM.CallOpts)
-}
-
 // Symbol is a free data retrieval call binding the contract method 0x95d89b41.
 //
 // Solidity: function symbol() constant returns(string)
@@ -330,6 +330,32 @@ func (_SNM *SNMSession) Symbol() (string, error) {
 // Solidity: function symbol() constant returns(string)
 func (_SNM *SNMCallerSession) Symbol() (string, error) {
 	return _SNM.Contract.Symbol(&_SNM.CallOpts)
+}
+
+// TokensAreFrozen is a free data retrieval call binding the contract method 0xca67065f.
+//
+// Solidity: function tokensAreFrozen() constant returns(bool)
+func (_SNM *SNMCaller) TokensAreFrozen(opts *bind.CallOpts) (bool, error) {
+	var (
+		ret0 = new(bool)
+	)
+	out := ret0
+	err := _SNM.contract.Call(opts, out, "tokensAreFrozen")
+	return *ret0, err
+}
+
+// TokensAreFrozen is a free data retrieval call binding the contract method 0xca67065f.
+//
+// Solidity: function tokensAreFrozen() constant returns(bool)
+func (_SNM *SNMSession) TokensAreFrozen() (bool, error) {
+	return _SNM.Contract.TokensAreFrozen(&_SNM.CallOpts)
+}
+
+// TokensAreFrozen is a free data retrieval call binding the contract method 0xca67065f.
+//
+// Solidity: function tokensAreFrozen() constant returns(bool)
+func (_SNM *SNMCallerSession) TokensAreFrozen() (bool, error) {
+	return _SNM.Contract.TokensAreFrozen(&_SNM.CallOpts)
 }
 
 // TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
@@ -360,149 +386,86 @@ func (_SNM *SNMCallerSession) TotalSupply() (*big.Int, error) {
 
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //
-// Solidity: function approve(_spender address, _value uint256) returns(bool)
+// Solidity: function approve(_spender address, _value uint256) returns()
 func (_SNM *SNMTransactor) Approve(opts *bind.TransactOpts, _spender common.Address, _value *big.Int) (*types.Transaction, error) {
 	return _SNM.contract.Transact(opts, "approve", _spender, _value)
 }
 
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //
-// Solidity: function approve(_spender address, _value uint256) returns(bool)
+// Solidity: function approve(_spender address, _value uint256) returns()
 func (_SNM *SNMSession) Approve(_spender common.Address, _value *big.Int) (*types.Transaction, error) {
 	return _SNM.Contract.Approve(&_SNM.TransactOpts, _spender, _value)
 }
 
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //
-// Solidity: function approve(_spender address, _value uint256) returns(bool)
+// Solidity: function approve(_spender address, _value uint256) returns()
 func (_SNM *SNMTransactorSession) Approve(_spender common.Address, _value *big.Int) (*types.Transaction, error) {
 	return _SNM.Contract.Approve(&_SNM.TransactOpts, _spender, _value)
 }
 
-// DecreaseApproval is a paid mutator transaction binding the contract method 0x66188463.
+// Mint is a paid mutator transaction binding the contract method 0x40c10f19.
 //
-// Solidity: function decreaseApproval(_spender address, _subtractedValue uint256) returns(bool)
-func (_SNM *SNMTransactor) DecreaseApproval(opts *bind.TransactOpts, _spender common.Address, _subtractedValue *big.Int) (*types.Transaction, error) {
-	return _SNM.contract.Transact(opts, "decreaseApproval", _spender, _subtractedValue)
+// Solidity: function mint(_holder address, _value uint256) returns()
+func (_SNM *SNMTransactor) Mint(opts *bind.TransactOpts, _holder common.Address, _value *big.Int) (*types.Transaction, error) {
+	return _SNM.contract.Transact(opts, "mint", _holder, _value)
 }
 
-// DecreaseApproval is a paid mutator transaction binding the contract method 0x66188463.
+// Mint is a paid mutator transaction binding the contract method 0x40c10f19.
 //
-// Solidity: function decreaseApproval(_spender address, _subtractedValue uint256) returns(bool)
-func (_SNM *SNMSession) DecreaseApproval(_spender common.Address, _subtractedValue *big.Int) (*types.Transaction, error) {
-	return _SNM.Contract.DecreaseApproval(&_SNM.TransactOpts, _spender, _subtractedValue)
+// Solidity: function mint(_holder address, _value uint256) returns()
+func (_SNM *SNMSession) Mint(_holder common.Address, _value *big.Int) (*types.Transaction, error) {
+	return _SNM.Contract.Mint(&_SNM.TransactOpts, _holder, _value)
 }
 
-// DecreaseApproval is a paid mutator transaction binding the contract method 0x66188463.
+// Mint is a paid mutator transaction binding the contract method 0x40c10f19.
 //
-// Solidity: function decreaseApproval(_spender address, _subtractedValue uint256) returns(bool)
-func (_SNM *SNMTransactorSession) DecreaseApproval(_spender common.Address, _subtractedValue *big.Int) (*types.Transaction, error) {
-	return _SNM.Contract.DecreaseApproval(&_SNM.TransactOpts, _spender, _subtractedValue)
-}
-
-// IncreaseApproval is a paid mutator transaction binding the contract method 0xd73dd623.
-//
-// Solidity: function increaseApproval(_spender address, _addedValue uint256) returns(bool)
-func (_SNM *SNMTransactor) IncreaseApproval(opts *bind.TransactOpts, _spender common.Address, _addedValue *big.Int) (*types.Transaction, error) {
-	return _SNM.contract.Transact(opts, "increaseApproval", _spender, _addedValue)
-}
-
-// IncreaseApproval is a paid mutator transaction binding the contract method 0xd73dd623.
-//
-// Solidity: function increaseApproval(_spender address, _addedValue uint256) returns(bool)
-func (_SNM *SNMSession) IncreaseApproval(_spender common.Address, _addedValue *big.Int) (*types.Transaction, error) {
-	return _SNM.Contract.IncreaseApproval(&_SNM.TransactOpts, _spender, _addedValue)
-}
-
-// IncreaseApproval is a paid mutator transaction binding the contract method 0xd73dd623.
-//
-// Solidity: function increaseApproval(_spender address, _addedValue uint256) returns(bool)
-func (_SNM *SNMTransactorSession) IncreaseApproval(_spender common.Address, _addedValue *big.Int) (*types.Transaction, error) {
-	return _SNM.Contract.IncreaseApproval(&_SNM.TransactOpts, _spender, _addedValue)
-}
-
-// RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
-//
-// Solidity: function renounceOwnership() returns()
-func (_SNM *SNMTransactor) RenounceOwnership(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _SNM.contract.Transact(opts, "renounceOwnership")
-}
-
-// RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
-//
-// Solidity: function renounceOwnership() returns()
-func (_SNM *SNMSession) RenounceOwnership() (*types.Transaction, error) {
-	return _SNM.Contract.RenounceOwnership(&_SNM.TransactOpts)
-}
-
-// RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
-//
-// Solidity: function renounceOwnership() returns()
-func (_SNM *SNMTransactorSession) RenounceOwnership() (*types.Transaction, error) {
-	return _SNM.Contract.RenounceOwnership(&_SNM.TransactOpts)
+// Solidity: function mint(_holder address, _value uint256) returns()
+func (_SNM *SNMTransactorSession) Mint(_holder common.Address, _value *big.Int) (*types.Transaction, error) {
+	return _SNM.Contract.Mint(&_SNM.TransactOpts, _holder, _value)
 }
 
 // Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
 //
-// Solidity: function transfer(_to address, _value uint256) returns(bool)
+// Solidity: function transfer(_to address, _value uint256) returns(success bool)
 func (_SNM *SNMTransactor) Transfer(opts *bind.TransactOpts, _to common.Address, _value *big.Int) (*types.Transaction, error) {
 	return _SNM.contract.Transact(opts, "transfer", _to, _value)
 }
 
 // Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
 //
-// Solidity: function transfer(_to address, _value uint256) returns(bool)
+// Solidity: function transfer(_to address, _value uint256) returns(success bool)
 func (_SNM *SNMSession) Transfer(_to common.Address, _value *big.Int) (*types.Transaction, error) {
 	return _SNM.Contract.Transfer(&_SNM.TransactOpts, _to, _value)
 }
 
 // Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
 //
-// Solidity: function transfer(_to address, _value uint256) returns(bool)
+// Solidity: function transfer(_to address, _value uint256) returns(success bool)
 func (_SNM *SNMTransactorSession) Transfer(_to common.Address, _value *big.Int) (*types.Transaction, error) {
 	return _SNM.Contract.Transfer(&_SNM.TransactOpts, _to, _value)
 }
 
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 //
-// Solidity: function transferFrom(_from address, _to address, _value uint256) returns(bool)
+// Solidity: function transferFrom(_from address, _to address, _value uint256) returns(success bool)
 func (_SNM *SNMTransactor) TransferFrom(opts *bind.TransactOpts, _from common.Address, _to common.Address, _value *big.Int) (*types.Transaction, error) {
 	return _SNM.contract.Transact(opts, "transferFrom", _from, _to, _value)
 }
 
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 //
-// Solidity: function transferFrom(_from address, _to address, _value uint256) returns(bool)
+// Solidity: function transferFrom(_from address, _to address, _value uint256) returns(success bool)
 func (_SNM *SNMSession) TransferFrom(_from common.Address, _to common.Address, _value *big.Int) (*types.Transaction, error) {
 	return _SNM.Contract.TransferFrom(&_SNM.TransactOpts, _from, _to, _value)
 }
 
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 //
-// Solidity: function transferFrom(_from address, _to address, _value uint256) returns(bool)
+// Solidity: function transferFrom(_from address, _to address, _value uint256) returns(success bool)
 func (_SNM *SNMTransactorSession) TransferFrom(_from common.Address, _to common.Address, _value *big.Int) (*types.Transaction, error) {
 	return _SNM.Contract.TransferFrom(&_SNM.TransactOpts, _from, _to, _value)
-}
-
-// TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
-//
-// Solidity: function transferOwnership(_newOwner address) returns()
-func (_SNM *SNMTransactor) TransferOwnership(opts *bind.TransactOpts, _newOwner common.Address) (*types.Transaction, error) {
-	return _SNM.contract.Transact(opts, "transferOwnership", _newOwner)
-}
-
-// TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
-//
-// Solidity: function transferOwnership(_newOwner address) returns()
-func (_SNM *SNMSession) TransferOwnership(_newOwner common.Address) (*types.Transaction, error) {
-	return _SNM.Contract.TransferOwnership(&_SNM.TransactOpts, _newOwner)
-}
-
-// TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
-//
-// Solidity: function transferOwnership(_newOwner address) returns()
-func (_SNM *SNMTransactorSession) TransferOwnership(_newOwner common.Address) (*types.Transaction, error) {
-	return _SNM.Contract.TransferOwnership(&_SNM.TransactOpts, _newOwner)
 }
 
 // SNMApprovalIterator is returned from FilterApproval and is used to iterate over the raw logs and unpacked data for Approval events raised by the SNM contract.
@@ -627,279 +590,6 @@ func (_SNM *SNMFilterer) WatchApproval(opts *bind.WatchOpts, sink chan<- *SNMApp
 				// New log arrived, parse the event and forward to the user
 				event := new(SNMApproval)
 				if err := _SNM.contract.UnpackLog(event, "Approval", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// SNMOwnershipRenouncedIterator is returned from FilterOwnershipRenounced and is used to iterate over the raw logs and unpacked data for OwnershipRenounced events raised by the SNM contract.
-type SNMOwnershipRenouncedIterator struct {
-	Event *SNMOwnershipRenounced // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *SNMOwnershipRenouncedIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(SNMOwnershipRenounced)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(SNMOwnershipRenounced)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *SNMOwnershipRenouncedIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *SNMOwnershipRenouncedIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// SNMOwnershipRenounced represents a OwnershipRenounced event raised by the SNM contract.
-type SNMOwnershipRenounced struct {
-	PreviousOwner common.Address
-	Raw           types.Log // Blockchain specific contextual infos
-}
-
-// FilterOwnershipRenounced is a free log retrieval operation binding the contract event 0xf8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c64820.
-//
-// Solidity: event OwnershipRenounced(previousOwner indexed address)
-func (_SNM *SNMFilterer) FilterOwnershipRenounced(opts *bind.FilterOpts, previousOwner []common.Address) (*SNMOwnershipRenouncedIterator, error) {
-
-	var previousOwnerRule []interface{}
-	for _, previousOwnerItem := range previousOwner {
-		previousOwnerRule = append(previousOwnerRule, previousOwnerItem)
-	}
-
-	logs, sub, err := _SNM.contract.FilterLogs(opts, "OwnershipRenounced", previousOwnerRule)
-	if err != nil {
-		return nil, err
-	}
-	return &SNMOwnershipRenouncedIterator{contract: _SNM.contract, event: "OwnershipRenounced", logs: logs, sub: sub}, nil
-}
-
-// WatchOwnershipRenounced is a free log subscription operation binding the contract event 0xf8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c64820.
-//
-// Solidity: event OwnershipRenounced(previousOwner indexed address)
-func (_SNM *SNMFilterer) WatchOwnershipRenounced(opts *bind.WatchOpts, sink chan<- *SNMOwnershipRenounced, previousOwner []common.Address) (event.Subscription, error) {
-
-	var previousOwnerRule []interface{}
-	for _, previousOwnerItem := range previousOwner {
-		previousOwnerRule = append(previousOwnerRule, previousOwnerItem)
-	}
-
-	logs, sub, err := _SNM.contract.WatchLogs(opts, "OwnershipRenounced", previousOwnerRule)
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(SNMOwnershipRenounced)
-				if err := _SNM.contract.UnpackLog(event, "OwnershipRenounced", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// SNMOwnershipTransferredIterator is returned from FilterOwnershipTransferred and is used to iterate over the raw logs and unpacked data for OwnershipTransferred events raised by the SNM contract.
-type SNMOwnershipTransferredIterator struct {
-	Event *SNMOwnershipTransferred // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *SNMOwnershipTransferredIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(SNMOwnershipTransferred)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(SNMOwnershipTransferred)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *SNMOwnershipTransferredIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *SNMOwnershipTransferredIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// SNMOwnershipTransferred represents a OwnershipTransferred event raised by the SNM contract.
-type SNMOwnershipTransferred struct {
-	PreviousOwner common.Address
-	NewOwner      common.Address
-	Raw           types.Log // Blockchain specific contextual infos
-}
-
-// FilterOwnershipTransferred is a free log retrieval operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
-//
-// Solidity: event OwnershipTransferred(previousOwner indexed address, newOwner indexed address)
-func (_SNM *SNMFilterer) FilterOwnershipTransferred(opts *bind.FilterOpts, previousOwner []common.Address, newOwner []common.Address) (*SNMOwnershipTransferredIterator, error) {
-
-	var previousOwnerRule []interface{}
-	for _, previousOwnerItem := range previousOwner {
-		previousOwnerRule = append(previousOwnerRule, previousOwnerItem)
-	}
-	var newOwnerRule []interface{}
-	for _, newOwnerItem := range newOwner {
-		newOwnerRule = append(newOwnerRule, newOwnerItem)
-	}
-
-	logs, sub, err := _SNM.contract.FilterLogs(opts, "OwnershipTransferred", previousOwnerRule, newOwnerRule)
-	if err != nil {
-		return nil, err
-	}
-	return &SNMOwnershipTransferredIterator{contract: _SNM.contract, event: "OwnershipTransferred", logs: logs, sub: sub}, nil
-}
-
-// WatchOwnershipTransferred is a free log subscription operation binding the contract event 0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0.
-//
-// Solidity: event OwnershipTransferred(previousOwner indexed address, newOwner indexed address)
-func (_SNM *SNMFilterer) WatchOwnershipTransferred(opts *bind.WatchOpts, sink chan<- *SNMOwnershipTransferred, previousOwner []common.Address, newOwner []common.Address) (event.Subscription, error) {
-
-	var previousOwnerRule []interface{}
-	for _, previousOwnerItem := range previousOwner {
-		previousOwnerRule = append(previousOwnerRule, previousOwnerItem)
-	}
-	var newOwnerRule []interface{}
-	for _, newOwnerItem := range newOwner {
-		newOwnerRule = append(newOwnerRule, newOwnerItem)
-	}
-
-	logs, sub, err := _SNM.contract.WatchLogs(opts, "OwnershipTransferred", previousOwnerRule, newOwnerRule)
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(SNMOwnershipTransferred)
-				if err := _SNM.contract.UnpackLog(event, "OwnershipTransferred", log); err != nil {
 					return err
 				}
 				event.Raw = log

@@ -30,7 +30,8 @@ contract SimpleGatekeeper is Ownable {
     }
 
     function Payout(address _to, uint256 _value, uint256 _txNumber) public onlyOwner{
-        bytes32 txHash = keccak256(_to, _txNumber, _value);
+        // bytes32 txHash = keccak256(_to, _txNumber, _value);
+        bytes32 txHash = keccak256(abi.encodePacked(_to, _txNumber, _value));
         require(!paid[txHash]);
         require(token.transfer(_to, _value));
         paid[txHash] = true;

@@ -78,7 +78,8 @@ contract SimpleGatekeeperWithLimitLive is Ownable {
         require(!keepers[msg.sender].frozen);
         require(keepers[msg.sender].dayLimit > 0);
 
-        bytes32 txHash = keccak256(_to, _txNumber, _value);
+        // bytes32 txHash = keccak256(_to, _txNumber, _value);
+        bytes32 txHash = keccak256(abi.encodePacked(_to, _txNumber, _value));
 
         // check that transaction is not paid
         require(!paid[txHash].paid);
